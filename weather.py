@@ -83,11 +83,17 @@ def main():
         if not (0 <= humidity <= 100):
             print("Oops, RH (%) must be between 0-100 only...")
             continue
+        pressure = float(input(" Enter pressure (mbar): "))   
+        visibility = float(input(" Enter visibility (km): "))
+        wind_speed= float(input(" Enter wind speed (km/hr): "))
         # add 3 more weather phenomenon here, such as UV index, etc.
         
         records[date] = {
             "temperature": temperature,
             "humidity": humidity,
+            "pressure": pressure,
+            "visibility": visibility,
+            "wind_speed": wind_speed,
             # add the key-value pairs here...
         }
         
@@ -100,11 +106,14 @@ def main():
         formatted_date = format_date(date)
         temperature = data["temperature"]
         humidity = data["humidity"]
+        pressure = data["pressure"]
+        visibility = data["visibility"]
+        wind_speed = data["wind_speed"]
         # phenomenon3 = data["phenomenon3"]
         # phenomenon4 = data["phenomenon4"]
         # phenomenon5 = data["phenomenon5"]
 
-        print(f"{formatted_date}\t| {temperature:.1f}°C\t| {humidity:.1f}%")
+        print(f"{formatted_date}\t| {temperature:.1f}°C\t| {humidity:.1f}%\t| {pressure:.1f}mbar\t| {visibility:.1f}km\t| {wind_speed:.1f}km/hr\t|")
         # print(f" * {phenomenon3:,.1f} symbol | ...")
         
 if __name__ == "__main__":
