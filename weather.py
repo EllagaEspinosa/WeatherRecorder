@@ -86,7 +86,6 @@ def main():
         pressure = float(input(" Enter pressure (mbar): "))   
         visibility = float(input(" Enter visibility (km): "))
         wind_speed= float(input(" Enter wind speed (km/hr): "))
-        # add 3 more weather phenomenon here, such as UV index, etc.
         
         records[date] = {
             "temperature": temperature,
@@ -94,7 +93,6 @@ def main():
             "pressure": pressure,
             "visibility": visibility,
             "wind_speed": wind_speed,
-            # add the key-value pairs here...
         }
         
     print("\nSaving to file...")
@@ -109,12 +107,8 @@ def main():
         pressure = data["pressure"]
         visibility = data["visibility"]
         wind_speed = data["wind_speed"]
-        # phenomenon3 = data["phenomenon3"]
-        # phenomenon4 = data["phenomenon4"]
-        # phenomenon5 = data["phenomenon5"]
 
         print(f"{formatted_date}\t| {temperature:.1f}°C\t| {humidity:.1f}%\t| {pressure:.1f}mbar\t| {visibility:.1f}km\t| {wind_speed:.1f}km/hr\t|")
-        # print(f" * {phenomenon3:,.1f} symbol | ...")
         
 if __name__ == "__main__":
     main()
